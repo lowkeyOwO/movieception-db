@@ -12,6 +12,10 @@ function generateURL(data) {
         if (typeof(data) != "object") {
             throw new Error(`Couldn't retreive data!`)
         }
+        // To run this project on your own, create a config.json file outside of the src director, and generate an api key from the OMdb website, add it to the config.json file as follows
+        /*{
+            "key" : [your_api_key]
+           }*/
         if (data.title_ID.startsWith("tt")) { // Generate URL with ID
             return `https://www.omdbapi.com/?apikey=${config.key}&i=${data.title_ID}&plot=full`;
         } else { // Generate URL with title
